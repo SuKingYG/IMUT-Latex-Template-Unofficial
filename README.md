@@ -1,5 +1,5 @@
-# SuKingYan
-内蒙古工业大学/IMUT Latex模板 非官方！！
+# 内蒙古工业大学/IMUT Latex模板 非官方！！
+需要请到Releases页下载ZIP文件
 
 # 内蒙古工业大学本科毕业论文 LaTeX 模板说明
 
