@@ -1,0 +1,400 @@
+\documentclass{imutthesis}
+\chead{\zihao{-5} 内蒙古工业大学本科毕业论文\LaTeX 模板}          %页眉内容    
+\usepackage{gbt7714}
+\bibliographystyle{gbt7714-numerical}
+\begin{document}
+\pagenumbering{gobble}	%无页码
+\begin{cnabstract}
+这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要。
+
+\par 关键词: 关键字1，关键字2，关键字3    %加粗\textbf{}
+
+\end{cnabstract}
+
+\begin{enabstract}
+    This is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstract
+
+	\par Keywords: keyword1, keyword2, keyword3   %加粗\textbf{}
+
+\end{enabstract}
+
+\tableofcontents    %%自动生成目录
+\listoffigures    %%无需图目录可去掉
+\listoftables     %%无需表目录可去掉
+\newpage 
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\begin{introduction}
+	
+\addcontentsline{toc}{section}{引言}   %%把引言加入目录
+ 此模板的出现是因为作者大三期间用\LaTeX 写了许多实验报告，设计说明书等，\reversemarginpar\marginpar{\zihao{-5}\textcolor{Red}{非官方\LaTeX 模板}}格式要求与“\href{http://jwch.imut.edu.cn/jwzx/infoSingleArticle.do?articleId=10889&columnId=}{内蒙古工业大学本科生毕业设计说明书(论文)撰写规范(修订)}”基本相同,故在家编写了一个模板,以方便后续使用。
+
+模板在\TeX Live编译系统下编写且可正常运行。由于作者水平有限，一些命令或者环境的使用不是很熟练，模板在使用过程中可能会遇到问题，可以联系邮箱\url{fanchao11429@163.com}一起解决。
+
+\end{introduction}
+
+\section{模板介绍}
+\subsection{文件说明}
+解压后会得到\textbf{Cover} 、\textbf{Body} 和\textbf{Paper} 三个文件夹。其中\textbf{Cover} 文件夹为论文封面，\textbf{Body} 文件夹为论文内容。 
+
+\textbf{Cover} 和\textbf{Body}文件夹中还有一个\textbf{figures}文件夹，文档中插入的图片放在这里，这样可以让文件夹看起来更加整洁。
+
+下面介绍各个文件夹中各文档类型。
+
+
+\begin{enumerate}
+	\item \textbf{Cover} 文件夹
+		\begin{itemize}
+			\item \textbf{Cover.tex：}为论文封面信息。{\color{red}\textbf{在这里修改封面名字班级等信息。}}
+			\item \textbf{Cover.pdf：}生成的{\color{red}\textbf{封面PDF}}文件。	
+		\end{itemize}
+	\item \textbf{Body} 文件夹
+		\begin{itemize}
+			\item \textbf{Body.tex：}为论文封面信息。{\color{red}\textbf{在这里编辑论文。}}
+			\item \textbf{Body.pdf：}生成的{\color{red}\textbf{正文PDF}}文件。
+	    	\item \textbf{IMUTthesis.cls：}{\color{red}\textbf{文档类定义文件}}，论文的最核心的格式通过它来定义。	
+    	\end{itemize}
+	 \item\textbf{Paper}文件夹  \quad (将前面俩个文件夹各自生成的PDF文件组合，当然你也可以用PDF编辑器实现这个功能。)
+		\begin{itemize}
+			\item \textbf{Paper.tex：}编译该文件即可得到你的论文。
+			\item \textbf{Paper.pdf：}{\color{red}\textbf{最终论文}}。
+		\end{itemize}
+     \item \textbf{文件中的其他类型文档}
+		\begin{itemize}
+			\item 文档中其他文件为辅助文件，每次编译都会生成。
+	    \end{itemize}
+\end{enumerate}
+\subsection{已加载的宏包}
+\begin{table}[H]
+	\centering
+	\caption{宏包目录}
+	\setlength{\tabcolsep}{5mm}{
+		\begin{tabular}{cccccc} 
+			\toprule 
+			geometry& xcolor  &  subfigure    &  graphicx  &   float    &      amsmath       \\ 
+			\midrule 
+	     	amsfonts	& amssymb &   bm  & fancyhdr     &  abstract  & amsmath\\ 
+	     	\midrule
+		    tocloft	&hyperref  &  titletoc   & listings     &   appendix  &  titlesec \\ 
+		    \midrule
+	     	longtable	& caption &booktabs   &  tabularx&  mhchem &ctex  \\ 
+			\bottomrule 
+		\end{tabular}
+	}
+\end{table}
+
+如果需要更改一些宏包设置可以去\textbf{Body} 文件夹下的\textbf{IMUTthesis.cls}文档修改，大部分情况无需修改。需要用到新的宏包，直接在导言区用 \verb|\usepackage{}| 命令加载即可。
+
+\section{正文要求}
+\begin{enumerate}
+{\bfseries	\item 毕业设计说明书(论文)的各组成部分和排列顺序}
+\par\qquad 封面、摘要、英文摘要、目录、图表清单及符号说明、引言（绪论）、正文、结论、注释、参考文献、附录、谢辞、外文文献及译稿。
+
+{\bfseries	\item 封面}
+\par\qquad 采用内蒙古工业大学毕业设计说明书（论文）统一封面。
+
+{\bfseries	\item 毕业设计说明书（论文）题目}
+\par\qquad 毕业设计说明书(论文)题目应能够概括整个论文的核心内容，字数不宜过多，一般不超过25字，尽量不设副标题。
+
+{\bfseries	\item 学科、专业名称}
+\par\qquad 学科、专业名称按照 《 普通高等学校本科专业目录》 (2012年 颁布) 的名称填写，而非某一专业方向。
+
+{\bfseries	\item 时间}
+\par\qquad 在封面下部写明毕业设计说明书（论文）提交时间。
+
+{\bfseries	\item 摘要及关键词}
+\par\qquad 摘要是毕业设计说明书（论文）内容的简短陈述，一般在300～500字，应具有独立性和自含性（即不阅读全文就能获得必要信息）。需要说明研究目的、研究方法、结果或结论，重点是结果或结论。摘要中一般不使用图、表、公式，不引用参考文献。
+
+\qquad 关键词是供检索用的主题词条，一般3～5个，应采用能覆盖论文主要内容的通用技术词条，按词条外延层次从大到小排列，以分号相隔。
+
+{\bfseries	\item 英文摘要}
+\par\qquad 中文摘要后为英文摘要，要求同中文摘要。。
+
+{\bfseries	\item 目录}
+\par\qquad 毕业设计说明书（论文）目录应包括全部章节的标题（要求编到3级标题）和参考文献、附录（可选择）、谢辞，页码右对齐。
+
+{\bfseries	\item 图表清单及符号说明}
+\par\qquad 如毕业设计说明书（论文）中插图或表格较多，可分别列出清单置于目录之后。图表清单应有序号、图题（表题）和所在页码。毕业设计说明书（论文）中用到的符号，应加以说明。对于物理量应注明量纲。
+
+{\bfseries	\item 引言（或绪论）}
+\par\qquad 毕业设计说明书（论文）引言（或绪论）应简要说明研究工作的目的范围、相关领域的研究进展、存在问题和研究工作的意义等。
+
+{\bfseries	\item  毕业设计说明书（论文）正文}
+\par\qquad 正文是毕业设计说明书（论文）的核心。正文内容要逻辑清晰，层次分明，实事求是，简练可读。理工类、艺术类专业毕业设计说明书正文字数一般不低于6000字（含计算书的不低于20000字）；理工类、艺术类专业毕业论文正文字数一般不低于12000字；经济类、管理类专业毕业论文一般不低于10000字；法学类专业毕业论文一般不低于6000字；外语类专业毕业论文字数一般不低于6000单词。
+
+\qquad 因毕业设计（论文）工作涉及的学科选题、研究方法、工作进程、结果表达等有较大差异，对正文内容不作统一规定，但要明确指出该设计说明书（论文）的创新点和实际应用之处。文中引用他人成果部分，须单独书写并注明出处，不得将其与本人提出的理论分析混淆在一起。
+
+{\bfseries	\item 公式}
+\par\qquad 毕业设计说明书（论文）正文中的公式应居中书写，如公式前有文字，空两格写文字，公式居中写，公式末尾不加标点，公式序号用阿拉伯数字分章依序连续编排，并加圆括号，如第一章第一个公式号为（1-1），附录A中的第一个公式为（A1）等。
+
+{\bfseries	\item 图表}
+\par\qquad 插图包括曲线图、流程图、工艺图、设备图、框图、示意图和图片等。插图序号用阿拉伯数字分章依序连续编排，每一插图都应有简短确切的题名，连同图序置于图下，图序与图名之间空一格，图名不允许使用标点符号。
+
+\qquad 表格序号采用阿拉伯数字分章依序连续编排。每一表格都应有简短确切的题名，表序与表名书写于表的正上方，表序与表名之间空一格，表名不允许使用标点符号。
+
+{\bfseries	\item 结论}
+\par\qquad 毕业设计说明书（论文）结论是对整个研究工作的归纳和综合总结。在结论中应明确指出本研究内容的创造性结果和理论，所得结果与已有结果的比较和本课题尚存在的问题，以及进一步开展研究的展望和设想。结论应该准确完整，明确精炼。
+
+{\bfseries	\item 注释}
+\par\qquad 毕业设计说明书（论文）中有个别名词（情况）需要解释时，可加注说明。注释一律采用篇末注（将全部注释集中在文章末尾）。
+
+{\bfseries	\item 参考文献}
+\par\qquad 所列参考文献应为毕业设计（论文）中引用文献。参考文献著录及标引参照国家标准《文后参考文献著录规则》（GB/T 7714-2005）的要求。
+
+{\bfseries	\item 附录}
+\par\qquad 附录是毕业设计说明书（论文）主体部分的补充项目，视需要决定是否使用。需收录于毕业设计说明书（论文）中，但又不便书写于正文中的附加数据、资料、详细公式推导、特殊检测方法、程序等有特色的内容可作为附录。附录的篇幅不宜过长，一般不可超过正文。每一附录应另页起。
+
+{\bfseries	\item 谢辞}
+\par\qquad 谢辞内容应简洁明了，实事求是。
+
+{\bfseries	\item 外文文献及译稿}
+\par\qquad 毕业设计（论文）任务书中要求学生阅读的外文文献（用A4纸复印）和翻译成中文的稿件（以A4纸打印）一起装订，放入《内蒙古工业大学毕业设计（论文）袋》内。
+
+\qquad 外文文献及译稿合订本与毕业设计说明书（论文）分别装订。
+
+{\bfseries	\item 纸张及页面}
+\par\qquad 原则上用word97以上版本打印输出。毕业设计说明书（论文）纸张用A4标准白纸（210mm-297mm）。版心尺寸为：左边距30mm，右边距25mm，上边距30mm，下边距25mm。
+
+{\bfseries	\item 字体与字号}
+\par\qquad 各章题序及标题为小二号黑体。各节的一级题序与标题为小三号黑体，各节的二级题序及标题为四号黑体，各节的三级题序及标题为小四号黑体，正文用小四号宋体。摘要、结论、参考文献、附录、谢辞等部分按章处理，即标题小二号黑体，内容小四号宋体。目录的标题采用小二号黑体，内容为小四号宋体。
+
+{\bfseries	\item 页眉}
+\par\qquad 毕业设计说明书（论文）封面不加页眉，其它部分均加页眉。页眉采用宋体五号字居中放置，内容一律为“内蒙古工业大学本科毕业设计说明书”或“内蒙古工业大学本科毕业论文”。页眉下划线为单线，线粗约0.5mm。
+
+{\bfseries	\item 页码}
+\par\qquad 毕业设计说明书（论文）页码一律用阿拉伯数字连续编码，页码由引言开始作为第1页，摘要、目录等不编排页码。
+
+{\bfseries	\item 印刷和装订}
+\par\qquad 毕业设计说明书（论文）行间距为22磅，即每页32行，每行37字。毕业设计说明书（论文）须用A4纸打印并装订成册。
+
+\end{enumerate}
+
+{\color{red} \zihao{-2}\textbf{以上的格式要求在本模板中都已实现！}}
+
+\section{使用说明}
+\subsection{编译方式}
+需用XeLaTex编译且使用者需要有一定的 \LaTeX 的使用经验, 需要会使用常用宏包的一些功能。比如数学公式、图片等. 
+\subsection{插图}
+将需要插入的图片放入\textbf{figures}文件夹下。
+\subsubsection{插图测试}
+\begin{figure}[H]
+	\centering
+	\subfigure[logo1]{
+		\includegraphics[width=3cm]{figures/1}
+	}
+	\quad
+	\subfigure[logo2]{
+		\includegraphics[width=3cm]{figures/1}
+	}
+	\quad
+	\subfigure[logo3]{
+		\includegraphics[width=3cm]{figures/1}
+	}
+	\quad
+	\subfigure[logo4]{
+		\includegraphics[width=3cm]{figures/1}
+	}
+	\caption{IMUTlogo}
+\end{figure}
+\subsection{数学公式}
+
+\subsubsection{行内公式}
+
+行内公式通过代码 \verb|$ ... $| 实现。为了美观，建议文中所有数学形式都加行间数学模式。
+\subsubsection{行间公式}
+行间公式可通过代码 \verb|\[  ...  \]| 实现。
+\subsubsection{公式测试}
+这是行内数学公式
+$ 	\int \frac{1}{\sqrt{1-x^{2}}}\mathrm{d}x= \arcsin x +C $。
+
+这是行间数学公式
+\begin{equation}
+d \mathord{ \buildrel{ \lower3pt \hbox{$ \scriptscriptstyle \rightharpoonup$}} \over B} = \frac{{{ \mu _0}}}{{4 \pi }} \frac{{Idl \times \mathord{ \buildrel{ \lower3pt \hbox{$ \scriptscriptstyle \rightharpoonup$}} \over r} }}{{{r^3}}} =  \frac{{{ \mu _0}}}{{4 \pi }} \frac{{Idl \sin \theta }}{{{r^2}}} 
+\end{equation}
+
+\subsection{表格}
+
+\subsubsection{长表格测试}
+这是一个长表格，如表\ref{tab:1}。
+\begin{center}
+	\setlength{\tabcolsep}{10mm}{
+		\begin{longtable}{ccc}
+			\caption{长表格测试} \label{tab:1}
+			\endfirsthead
+			\toprule
+			符号      &   表示含义              &     单位 \\
+			\toprule
+			\endhead
+			\toprule
+			符号      &   表示含义              &     单位 \\
+			\toprule
+			$t$      & 时间                   &     $s$\\
+			\midrule
+			$C_{1-5}$      &  第$1-5$温区温度           &     $^{\circ}C$\\
+			\midrule 
+			$ C_{6}$      & 第$6$温区温度            & $^{\circ}C$\\    
+			\midrule
+			$ C_{7}$      &  $7$温区温度                      &     $^{\circ}C$\\
+			\midrule
+			$ C_{8-9}$      &  $8-9$温区温度                 &     $^{\circ}C$\\
+			\midrule  
+			$ C_{10-11}$      &  第$10-11$温区温度                  &     $^{\circ}C$\\
+			\midrule
+			$ T$      &  温度                &     $^{\circ}C$\\
+			\midrule
+			$ T_{max}$      &  最大温度                &     $^{\circ}C$\\
+			\midrule
+			$v$      &  传送带速度             &     $cm/min$\\
+			\midrule
+			$v_{max}$      &  最大传送带速度             &     $cm/min$\\
+			\midrule
+			$ x$      &  温区长度           &     $cm$\\  
+			\midrule
+			$ k_{1-5}$      &  第$1-5$温区的$k$值                   &    常数\\ 
+			\midrule
+			$ k_{6}$      &  第$6$温区的$k$值                   &    常数\\ 
+			\midrule
+			$ k_{7}$      &  第$7$温区的$k$值                   &    常数\\ 
+			\midrule
+			$ k_{8-9}$      &  第$8-9$温区的$k$值                   &    常数\\ 
+			\midrule 
+			$ k_{10-11}$      &  第$10-11$温区的$k$值                   &    常数\\ 
+			\bottomrule
+	\end{longtable}}
+\end{center}
+\subsection{化学方程式}
+考虑到一些同学需要写化学公式，本模板加载了相关宏包 \verb|mhchem| 。
+\subsubsection{化学方程式测试}
+\ce{Zn^2+  <=>[+ 2OH-][+ 2H+]  $\underset{\text{这是沉淀}}{\ce{Zn(OH)2 v}}$  <=>[+ 2OH-][+ 2H+]  $\underset{\text{这是离子}}{\ce{[Zn(OH)4]^2-}}$} 
+\section{参考文献}
+插入参考文献可以去\cite{YYQD201807001} \href{https://www.cnki.net/}{\textbf{中国知网}}、\href{https://xueshu.baidu.com/}{\textbf{百度学术}}，\href{https://scholar.google.com/}{\textbf{Google Scholar}}等文献库引用复制，然后将其粘贴于参考文献处。
+~\\~\\~\\~\\
+
+{\zihao{2}模板下载地址 \url{https://wws.lanzous.com/b01i01jfa}，提取码da88。}\cite{YYQD201807001}
+
+\bibliography{reference}
+
+%\begin{thebibliography}{1}%个数99  最大为99
+%\addcontentsline{toc}{section}{参考文献}   %%把参考文献加入目录
+%\bibitem{} 刘海洋. \LaTeX 入门[J]. 电子工业出版社, 北京, 2013.
+%\bibitem{} lshort-zh-cn.pdf
+%\bibitem{}
+%\bibitem{}    
+%\end{thebibliography}
+
+
+\appendix
+\section{附录测试}
+\subsection{论文无需附录去掉该部分}
+
+\subsection{一些测试}
+\begin{equation} 
+\begin{bmatrix}
+	z_{1}\\
+	z_{2}\\
+	\vdots\\
+	z_{n}
+\end{bmatrix}
+=\begin{bmatrix}
+	1 & x_{1}  &x_{1}^{2}  \\
+	1& x_{2} & x_{2}^{2} \\
+	\vdots & \vdots & \vdots\\
+	1 & x_{n} & x_{3}^{2}
+\end{bmatrix}
+\begin{bmatrix}
+	a_{1} \\
+	a_{2} \\
+	a_{3} 
+\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+				y_{n}=y_{max} \times e^{\left (-\frac{(x_{n}-x_{max})^{2}}{Q} \right )}
+\end{equation}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{figures/4}
+	\caption{长标题测试。这是个很长很长很长很长很长很长很长很长很长很长很长很长的标题}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\caption{跑马灯I/O分配表}
+	\setlength{\tabcolsep}{10mm}{
+		\begin{tabular}{cc} 
+			\toprule 
+			输入& 输出                           \\ 
+			\midrule 
+			$ SB_{0} $\qquad I0.0& $ D_{1} $灯 \qquad Q0.0    \\ 
+			$ SB_{1} $\qquad I0.1& $ D_{2} $灯 \qquad Q0.1    \\ 
+			& $ D_{3} $灯 \qquad Q0.2    \\ 
+			& $ D_{4} $灯 \qquad Q0.3    \\ 
+			& $ D_{5} $灯 \qquad Q0.4    \\ 
+			\bottomrule 
+	\end{tabular}
+}
+\end{table}
+
+
+\section{冒泡排序算法}
+ \begin{lstlisting}[language=Java]  
+public static void bubble_sort(int[] arr) {
+	int i, j, temp, len = arr.length;
+	for (i = 0; i < len - 1; i++)
+	for (j = 0; j < len - 1 - i; j++)
+	if (arr[j] > arr[j + 1]) {
+		temp = arr[j];
+		arr[j] = arr[j + 1];
+		arr[j + 1] = temp;
+	}
+}
+ \end{lstlisting} 
+\begin{table}[H]
+	\centering
+	\caption{跑马灯I/O分配表}
+	\setlength{\tabcolsep}{10mm}{
+		\begin{tabular}{cc} 
+			\toprule 
+			输入& 输出                           \\ 
+			\midrule 
+			$ SB_{0} $\qquad I0.0& $ D_{1} $灯 \qquad Q0.0    \\ 
+			$ SB_{1} $\qquad I0.1& $ D_{2} $灯 \qquad Q0.1    \\ 
+			& $ D_{3} $灯 \qquad Q0.2    \\ 
+			& $ D_{4} $灯 \qquad Q0.3    \\ 
+			& $ D_{5} $灯 \qquad Q0.4    \\ 
+			\bottomrule 
+		\end{tabular}
+	}
+\end{table}
+
+\begin{equation} 
+	\begin{bmatrix}
+		z_{1}\\
+		z_{2}\\
+		\vdots\\
+		z_{n}
+	\end{bmatrix}
+	=\begin{bmatrix}
+		1 & x_{1}  &x_{1}^{2}  \\
+		1& x_{2} & x_{2}^{2} \\
+		\vdots & \vdots & \vdots\\
+		1 & x_{n} & x_{3}^{2}
+	\end{bmatrix}
+	\begin{bmatrix}
+		a_{1} \\
+		a_{2} \\
+		a_{3} 
+	\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+f(x) = \int_{-\infty}^\infty  \hat f(x)\xi\,e^{2 \pi i \xi x}  \,\mathrm{d}\xi 
+\end{equation}
+\begin{acknowledgment}
+
+\end{acknowledgment}
+
+
+\end{document}
